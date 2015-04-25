@@ -1,4 +1,5 @@
-function VideoCtrl ($scope, socket) {
+angular.module('videoAdmin', [])
+.controller('videoAdminController', function ($scope, socket) {
   $scope.video = document.getElementById('movie');
 
   $scope.video.addEventListener('playing', function() {
@@ -11,7 +12,9 @@ function VideoCtrl ($scope, socket) {
 
   $scope.video.addEventListener('timeupdate', function() {
     socket.emit('movie:sync', $scope.video.currentTime);
-  })
+  });
+
+});
 
   /*
   socket.on('movie:play', function() {
@@ -32,5 +35,3 @@ function VideoCtrl ($scope, socket) {
   });
   */
 
-
-}

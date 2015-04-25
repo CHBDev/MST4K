@@ -1,4 +1,5 @@
-function VideoCtrl ($scope, socket) {
+angular.module('video', [])
+.controller('videoController', function ($scope, socket) {
   $scope.video = document.getElementById('movie');
 
   socket.on('movie:play', function() {
@@ -20,4 +21,4 @@ function VideoCtrl ($scope, socket) {
 
 
 
-}
+});

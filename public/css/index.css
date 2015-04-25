@@ -48,22 +48,56 @@ table {
   border-spacing: 0;
 }
 
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.group {
+  clear: both;
+  *zoom: 1;
+}
+
 body{
+  font-size: 16px;
+  font-size: 1.3vw;
+  position: relative;
+  line-height: 1.38em;
+  font-family: "helvetica", helvetica;
+  font-weight: normal;
+  background-color: #444444;
+  color: #cbcbcb;
+}
+form{
+  padding: 1%;
 
 }
-#header{
-  background-color: orange;
+textarea{
+  box-sizing: border-box;
   width: 100%;
+  padding: 2%;
+  resize: none;
+}
+#header{
+  width: 100%;
+  margin: 4px;
+  padding: 4px;
+
+}
+.title{
+
 }
 #movieHolder{
   display: relative;
   float: left;
   width: 50%;
-  background-color: #333333;
+ background-color: #343434;
 }
 #movieInnerHolder{
   width: 90%;
-  background-color: blue;
   margin-left: auto;
   margin-right: auto;
   display: block
@@ -72,26 +106,65 @@ body{
   width: 100%;
 }
 #chatHolder{
+  display: inline-block;
+  position: fixed;
   float: right;
   width:50%;
-  background-color: red;
+  background-color: #444444;
+  height: 100%;
 }
+
 #chatInnerHolder{
+  box-sizing: border-box;
+  display: block;
+  overflow-y: scroll;
+  height: 100%;
   padding: 2%;
 }
 #chatTitle{
 
 }
 #messagesHolder{
-  background-color: blue;
+  display: block;
+  overflow-y: scroll;
+  max-height: 80%;
+  overflow:scroll;
+  background-color: #303030;
+  padding: 2px;
+  border: 1px solid #efefef;
+}
+.messageBox{
+  position: static;
+  display: block;
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+  margin: 2px;
+  padding: 2px;
+  padding-bottom: .3em;
+}
+.messageName{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  width: 20%;
+  float:left;
+
+}
+.messageText{
+  display: inline-block;
+  float: right;
+  width:75%;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 768px){
   #movieHolder{
+    float: none;
     width: 100%;
 
   }
   #chatHolder{
+    float: none;
     width: 100%;
   }
   #chatTitle{
