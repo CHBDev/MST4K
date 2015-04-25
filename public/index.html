@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MST4K</title>
+  <link rel="stylesheet" href="./css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body ng-app>
+  <div id="header"><h1>MST4K Video Viewer</h1><div>
+    <div id='movieHolder' ng-controller="VideoCtrl">
+      <div id='movieInnerHolder'>
+      <video id="movie" preload="auto" src="" controls></video>
+    </div>
+  </div>
+  <div id="chatHolder" ng-controller="ChatCtrl">
+    <div id="chatInnerHolder">
+      <span id="chatTitle">CHAT PH</span>
+      <div id="messagesHolder">
+        <div ng-model="messages">Oh
+          <div ng-repeat="message in messages">
+            <div class='messageName'> {{ message.name }}</div>
+            <div class="messageText"> {{ message.text }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <form ng-submit="sendMessage(input)">
+      <input type="text" ng-model="input">
+      <button >Send</button>
+    </form>
+    <form ng-if="!name" ng-submit="changeName(nameInput)">
+      <input type="text" ng-model="nameInput">
+      <button >Update Username</button>
+    </form>
+  </div>
+  <script src="./js/services.js"></script>
+  <script src="./js/chat.js"></script>
+  <script src="./js/video.js"></script>
+  <script src="./js/videoAdmin.js"></script>
+</body>
+</html>
