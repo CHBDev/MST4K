@@ -4,25 +4,27 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
+*, html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
+b, u, i, center,button,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, input {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -67,8 +69,7 @@ table {
 }
 
 html{
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+
   width: 100%;
   height: 100%;
 }
@@ -82,10 +83,6 @@ body{
   color: #cbcbcb;
   height: 100%;
   width:100%;
-}
-form{
-  padding: 1%;
-
 }
 textarea{
   width: 100%;
@@ -111,6 +108,7 @@ video{
 }
 
 #chatTitle{
+  text-align: center;
   color: white;
   line-height: 2.0em;
 }
@@ -121,17 +119,23 @@ video{
   width: 25%;
   height: 100%;
   background-color: #343434;
+  border: 2px solid white;
 }
 
 #chatInnerHolder{
+  margin: 1px;
   height: 100%;
   display: block;
+  -webkit-box-shadow: inset 2px 2px 1px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 2px 2px 1px 0px rgba(0,0,0,0.75);
+  box-shadow: inset 2px 2px 1px 0px rgba(0,0,0,0.75);
 }
 #chatTitle{
-
+  top: 0px;
+  border-bottom: 5px solid rgba(0,0,0,.4);
 }
 #messagesHolder{
-  height: 100%;
+  /*height: 100%;*/
   width: 100%;
   display: block;
   margin-left: auto;
@@ -139,11 +143,10 @@ video{
   min-height: 5%;
   display: block;
   overflow-y: scroll;
-  max-height: 80%;
+  max-height: 90%;
   overflow:scroll;
   background-color: #303030;
   padding: 2px;
-  border: 1px solid #efefef;
 }
 
 .messageBox{
@@ -191,24 +194,77 @@ video{
 
 }
 
-
+html #textEntryArea{
+  display: block;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  background-color: #303030;
+  width: 25%;
+  border-top: 2px solid white;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 input, textarea{
-  margin: 2px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "helvetica", helvetica;
   font-weight: normal;
   font-size: 15px;
   background-color: #222222;
+  color: #cbcbcb;
+  margin: 0;
+  display:block;
+}
+
+#messageSubmit{
+  display: block;
+  width: 100%;
+}
+
+html body #messageTextarea{
+  margin: 1px;
+  border: 2px solid #7777aa;
+}
+
+#messageButton{
+  display: inline-block;
+  font-family: "helvetica", helvetica;
+  font-weight: normal;
+  font-size: 15px;
   color: #cbcbcb;
 }
 
-button{
+#usernameSubmit{
+  display:block;
+  width: 100%;
+}
+
+#usernameInput{
+  display: inline-block;
+  border: 2px solid gray;
   margin: 2px;
+}
+
+#usernameButton{
+  display: inline-block;
   font-family: "helvetica", helvetica;
   font-weight: normal;
   font-size: 15px;
-  background-color: #222222;
   color: #cbcbcb;
+}
+
+.button{
+  margin: 2px;
+  min-width: 80px;
+  max-width: 100px;
+  border: 1px solid white;
+  background-color: black;
+  padding-left: .76em;
+  padding-right: .76em;
+  padding-bottom: .44em;
+  padding-top: .44em;
 }
 
 @media screen and (max-width: 1280px){
@@ -224,9 +280,16 @@ button{
   }
   #chatHolder{
     float: none;
-    width: 98%;
+    width: 100%;
     height:50%;
     text-align: center;
+  }
+  html #textEntryArea{
+    width: 100%;
+    text-align: center;
+  }
+  #messagesHolder{
+    max-height: 76%;
   }
 
 }

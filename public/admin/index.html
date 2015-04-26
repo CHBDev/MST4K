@@ -16,7 +16,6 @@
   <div id="chatHolder" ng-controller="chatController">
     <div id="chatInnerHolder">
       <span id="chatTitle">Admin Page</span>
-
         <div id="messagesHolder" >
           <div ng-model="messages" class='messageBox group' ng-repeat="message in messages" ng-change="scrollMessages()">
             <div class='messageName'>{{ message.name }}</div>
