@@ -147,6 +147,7 @@ video{
   overflow:scroll;
   background-color: #303030;
   padding: 2px;
+  margin-bottom: 100px;
 }
 
 .messageBox{
@@ -293,6 +294,38 @@ html body #messageTextarea{
   }
 
 }
+
+@media screen and (max-height: 400px){
+
+  body{
+
+  }
+  #movieHolder{
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    float: right;
+    width: 75%;
+    height: 100%
+
+  }
+  #chatHolder{
+    float: left;
+    width: 25%;
+    height:100%;
+    text-align: center;
+  }
+  html #textEntryArea{
+    width: 25%%;
+    text-align: center;
+  }
+  #messagesHolder{
+    max-height: 90%;
+  }
+
+}
+
+
 @media screen and (max-width: 768px){
 
   body{
